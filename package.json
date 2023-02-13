@@ -3,7 +3,9 @@
 	"name": "@jamesgopsill/thingiverse-client",
 	"version": "0.0.1",
 	"description": "A Typescript client for the Thingiverse client.",
-	"keywords": ["Thingiverse"],
+	"keywords": [
+		"Thingiverse"
+	],
 	"author": "James Gopsill",
 	"license": "MIT",
 	"private": false,

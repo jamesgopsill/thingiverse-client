@@ -5,3 +5,5 @@ dist/
 *.tsbuildinfo
 
 .DS_Store
+test.conifg.ts
+access-token.txt

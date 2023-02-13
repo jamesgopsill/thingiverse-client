@@ -1,10 +1,11 @@
+import { keysToCamel, keysToSnake } from "./format-keys.js"
 import type { ThingiverseClient, HttpResponse } from "./index.js"
 
 export async function fetchIt<T>(
 	this: ThingiverseClient,
 	method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH",
 	url: string,
-	bodyArgs: { [k: string]: string } = {}
+	bodyArgs: { [k: string]: any } | undefined = undefined
 ) {
 	let config: any = {
 		method,
@@ -18,6 +19,7 @@ export async function fetchIt<T>(
 		config.headers["Authorization"] = `Bearer ${this._bearerToken}`
 	}
 	if (typeof bodyArgs === "object") {
+		bodyArgs = keysToSnake(bodyArgs)
 		config.headers["Content-Type"] = "application/json"
 		config.body = JSON.stringify(bodyArgs)
 	}
@@ -27,8 +29,10 @@ export async function fetchIt<T>(
 	const r = (await fetch(request)) as HttpResponse<T>
 	r.content = undefined
 	if (r.ok && r.status === 200) {
-		if (r.headers.get("Content-Type") === "application/json") {
-			r.content = await r.json()
+		if (r.headers.get("Content-Type")?.includes("application/json")) {
+			let content = await r.json()
+			content = keysToCamel(content)
+			r.content = content
 		}
 	}
 	return r
