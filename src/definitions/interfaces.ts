@@ -105,7 +105,7 @@ export interface Creator {
 	isAdmin: number
 }
 
-export interface Thing {
+export interface PartialThing {
 	id: string
 	name: string
 	url: string
@@ -124,6 +124,109 @@ export interface Thing {
 	isNsfw: boolean
 	rank: any | null
 	collectCount: number
+}
+
+export interface Thing {
+	id: string
+	name: string
+	thumbnail: string
+	url: string
+	publicUrl: string
+	creator: Creator
+	added: string
+	modified: string
+	isPublished: number
+	isWip: number
+	isFeatured: boolean | null
+	isNsfw: boolean
+	likeCount: number
+	isLiked: boolean
+	collectCount: number
+	isCollected: number
+	commentCount: number
+	isWatched: boolean
+	defaultImage: ThingImage
+	description: string
+	detailsParts: Part[]
+	eduDetails: string
+	eduDetailsParts: EduDetailPart[]
+	license: string
+	allowsDerivatives: boolean
+	filesUrl: string
+	imagesUrl: string
+	likesUrl: string
+	ancestorsUrl: string
+	derivativesUrl: string
+	tagsUrl: string
+	tags: Tag[]
+	categoriesUrl: string
+	fileCount: number
+	layoutCount: number
+	layoutsUrl: string
+	isPrivate: number
+	isPurchased: number
+	inLibrary: boolean
+	printHistoryCount: number
+	appId: string | null
+	downloadCount: number
+	education: {
+		grades: any[]
+		subjects: any[]
+	}
+	remixCount: number
+	makeCount: number
+	appCount: number
+	rootCommentCount: number
+	moderation: string
+	isDerivative: boolean
+	ancestors: any[]
+	canComment: boolean
+	typeName: string
+	isBanned: boolean
+	needsModeration: number
+}
+
+export interface EduDetailPart {
+	type: string
+	name: string
+	required?: string
+	saveAsComponent?: boolean
+	template?: string
+	fieldname?: string
+	default?: string
+	opts?: any
+}
+
+export interface Part {
+	type: string
+	name: string
+	required?: boolean
+	data?: any[]
+}
+
+export interface ThingImage {
+	id: string
+	url: string
+	name: string
+	sizes: any[]
+	added: string
+}
+
+export interface ThingFile {
+	id: string
+	name: string
+	size: number
+	url: string
+	publicUrl: string
+	downloadUrl: string
+	threejsUrl: string
+	thumbnail: string
+	defaultImage: ThingImage | null
+	date: string
+	formattedSize: string
+	metadata: any[]
+	downloadCount: number
+	directUrl: string
 }
 
 export interface Tag {
@@ -155,4 +258,80 @@ export interface Collection {
 
 export interface UnreadMessageCount {
 	unreadMessageCount: number
+}
+
+export interface UpdateThing {
+	name: string
+	license: string
+	category: string
+	description: string
+	instructions: string
+	isWip: boolean
+	tags: string[]
+}
+
+export interface CreateThing extends UpdateThing {
+	ancestors: string[]
+}
+
+export interface Category {
+	id: number
+	name: string
+	url: string
+	count: number
+	slug: string
+	thingsUrl: string
+}
+
+export interface ThreadedComments {
+	comments: { [k: string]: ThreadedComment[] }
+	users: {
+		[k: string]: {
+			userName: string
+			userAvatar: string
+			isAdmin: number
+		}
+	}
+}
+
+export interface ThreadedComment {
+	id: string
+	addDate: string
+	modifiedDate: string | null
+	body: string
+	userId: string
+	isDeleted: boolean
+	url: string
+	needsModeration: number
+	assets: any[]
+	parentId: string
+	parentUserName: string
+	parentUrl: string
+}
+
+export interface Comment {
+	id: string
+	url: string
+	targetType: string
+	targetId: number
+	publicUrl: string
+	targetUrl: string
+	body: string
+	bodyHtml: string
+	user: Creator
+	added: string
+	modified: string
+	parentId: string
+	parentUrl: string
+	isDeleted: boolean
+	attachments: []
+	needsModeration: boolean
+	isRootComment: boolean
+	hasChildren: boolean
+	topicName: string | null
+	things: any[]
+}
+
+export interface Watching {
+	watching: boolean
 }

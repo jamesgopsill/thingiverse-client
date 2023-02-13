@@ -6,6 +6,7 @@ import type {
 	Thing,
 	Collection,
 	UnreadMessageCount,
+	PartialThing,
 } from "../index.js"
 
 export function me(this: ThingiverseClient) {
@@ -40,7 +41,7 @@ export function searchUserThings(
 	const url = `${
 		this._urls[this._server]
 	}/users/${username}/search/${searchTerm}`
-	return this._fetch<Paginated<Thing>>("GET", url)
+	return this._fetch<Paginated<PartialThing>>("GET", url)
 }
 
 export function userThings(this: ThingiverseClient, username: string) {

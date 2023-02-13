@@ -1,5 +1,6 @@
 import { fetchIt } from "./fetch-it.js"
 import * as User from "./endpoints/user.js"
+import * as Thing from "./endpoints/things.js"
 
 export * from "./definitions/interfaces.js"
 
@@ -44,4 +45,33 @@ export class ThingiverseClient {
 	public updateCoverImage = User.updateCoverImage
 	public userVerificationEmail = User.userVerificationEmail
 	public userEventCount = User.userEventCount
+
+	// Thing endpoints
+	public thing = Thing.thing
+	public thingImages = Thing.thingImages
+	public updateThingImage = Thing.updateThingImage
+	public deleteThingImage = Thing.deleteThingImage
+	public thingFiles = Thing.thingFiles
+	public deleteThingFile = Thing.deleteThingFile
+	public thingLikedUsers = Thing.thingLikedUsers
+	public thingAncestors = Thing.thingAncestors
+	public thingDerivatives = Thing.thingDerivatives
+	public thingTags = Thing.thingTags
+	public thingCategories = Thing.thingCategories
+	public updateThing = Thing.updateThing
+	public createThing = Thing.createThing
+	public deleteThing = Thing.deleteThing
+	public uploadFileToThing = Thing.uploadFileToThing
+	public publishThing = Thing.publishThing
+	public thingCopies = Thing.thingCopies
+	public uploadCopy = Thing.uploadCopy
+	public like = Thing.like
+	public removeLike = Thing.removeLike
+	public thingPrints = Thing.thingPrints
+	public thingThreadedComments = Thing.thingThreadedComments
+	public thingComments = Thing.thingComments
+	public thingRootComments = Thing.thingRootComments
+	public postCommentOnThing = Thing.postCommentOnThing
+	public toggleWatchThing = Thing.toggleWatchThing
+	public thingTrackingViews = Thing.thingTrackingViews
 }
