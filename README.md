@@ -18,7 +18,7 @@ You can then use in your code:
 import { ThingiverseClient } from "@jamesgopsill/thingiverse-client"
 
 // Create a new client. (Only setup for app tokens at the moment)
-const client = new OctoPrintClient("APP_TOKEN")
+const client = new ThingiverseClient("APP_TOKEN")
 const thing = "763622"
 
 const r = await c.thing(thing)
@@ -34,7 +34,7 @@ if (r.ok && r.status == 200) {
 const { ThingiverseClient } = require("@jamesgopsill/octoprint-client")
 
 // Create a new client. (Only setup for app tokens at the moment)
-const client = new OctoPrintClient("APP_TOKEN")
+const client = new ThingiverseClient("APP_TOKEN")
 const thing = "763622"
 
 const r = await c.thing(thing)
