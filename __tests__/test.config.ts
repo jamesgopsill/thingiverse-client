@@ -10,4 +10,6 @@ if (existsSync(fname)) {
 	auth = JSON.parse(readFileSync(fname).toString())
 }
 
-// TODO attempt the access it from env var for GitHub Actions.
+if (process.env["THINGIVERSE_APP_TOKEN"] != undefined) {
+	auth.accessToken = process.env["THINGIVERSE_APP_TOKEN"]
+}

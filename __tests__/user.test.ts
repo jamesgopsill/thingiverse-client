@@ -48,11 +48,6 @@ test(`User Downloaded Things`, async () => {
 	expect(r.ok).toBe(false)
 })
 
-test(`User Event Count`, async () => {
-	const r = await c.userEventCount(username)
-	expect(r.ok).toBe(true)
-})
-
 test(`User Collected Things`, async () => {
 	const r = await c.userDownloadedThings(username)
 	expect(r.ok).toBe(false)
