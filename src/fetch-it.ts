@@ -1,5 +1,6 @@
 import { keysToCamel, keysToSnake } from "./format-keys.js"
 import type { ThingiverseClient, HttpResponse } from "./index.js"
+import { parseDates } from "./parse-dates.js"
 
 export async function fetchIt<T>(
 	this: ThingiverseClient,
@@ -32,6 +33,7 @@ export async function fetchIt<T>(
 		if (r.headers.get("Content-Type")?.includes("application/json")) {
 			let content = await r.json()
 			content = keysToCamel(content)
+			parseDates(content)
 			r.content = content
 		}
 	}

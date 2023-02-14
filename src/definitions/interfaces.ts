@@ -39,8 +39,8 @@ export interface User {
 	country: string
 	industry: string
 	subindustry: string | null
-	registered: string
-	lastActive: string
+	registered: Date
+	lastActive: Date
 	coverImage: string
 	thingsUrl: string
 	copiesUrl: string
@@ -110,7 +110,7 @@ export interface PartialThing {
 	name: string
 	url: string
 	publicUrl: string
-	createdAt: string
+	createdAt: Date
 	thumbnail: string
 	previewImage: string
 	creator: Creator
@@ -133,8 +133,8 @@ export interface Thing {
 	url: string
 	publicUrl: string
 	creator: Creator
-	added: string
-	modified: string
+	added: Date
+	modified: Date
 	isPublished: number
 	isWip: number
 	isFeatured: boolean | null
@@ -209,7 +209,7 @@ export interface ThingImage {
 	url: string
 	name: string
 	sizes: any[]
-	added: string
+	added: Date
 }
 
 export interface ThingFile {
@@ -222,7 +222,7 @@ export interface ThingFile {
 	threejsUrl: string
 	thumbnail: string
 	defaultImage: ThingImage | null
-	date: string
+	date: Date
 	formattedSize: string
 	metadata: any[]
 	downloadCount: number
@@ -242,7 +242,7 @@ export interface Collection {
 	id: string
 	name: string
 	description: string
-	added: string
+	added: Date
 	modified: string
 	creator: Creator
 	url: string
@@ -319,7 +319,7 @@ export interface Comment {
 	body: string
 	bodyHtml: string
 	user: Creator
-	added: string
+	added: Date
 	modified: string
 	parentId: string
 	parentUrl: string

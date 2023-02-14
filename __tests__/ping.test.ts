@@ -1,10 +1,10 @@
 import { ThingiverseClient } from "../src/index.js"
-import { accessToken } from "./test.config.js"
+import { auth } from "./test.config.js"
 
 let c: ThingiverseClient
 
 beforeAll(() => {
-	c = new ThingiverseClient(accessToken, "production")
+	c = new ThingiverseClient(auth.accessToken, "production")
 })
 
 test(`Ping`, () => {

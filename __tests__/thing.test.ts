@@ -1,13 +1,10 @@
 import { ThingiverseClient } from "../src/index.js"
-import { accessToken } from "./test.config.js"
+import { auth } from "./test.config.js"
 
 let c: ThingiverseClient
-// const thing = "763622"
-// const thing = "5790661"
-//const thing = "5797144"
 
 beforeAll(() => {
-	c = new ThingiverseClient(accessToken, "production")
+	c = new ThingiverseClient(auth.accessToken, "production")
 })
 
 test(`Get Thing`, async () => {
@@ -85,6 +82,5 @@ test(`Get Thing Comments`, async () => {
 test(`Get Thing Root Comments`, async () => {
 	const thing = "5806802"
 	const r = await c.thingRootComments(thing)
-	console.log(r.content)
 	expect(r.ok).toBe(true)
 })

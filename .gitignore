@@ -6,4 +6,4 @@ dist/
 
 .DS_Store
 test.conifg.ts
-access-token.txt
+test-auth.json

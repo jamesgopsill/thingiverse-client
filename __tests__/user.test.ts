@@ -1,11 +1,11 @@
 import { ThingiverseClient } from "../src/index.js"
-import { accessToken } from "./test.config.js"
+import { auth } from "./test.config.js"
 
 let c: ThingiverseClient
 const username = "manabun"
 
 beforeAll(() => {
-	c = new ThingiverseClient(accessToken, "production")
+	c = new ThingiverseClient(auth.accessToken, "production")
 })
 
 test(`Get User`, async () => {
@@ -50,8 +50,6 @@ test(`User Downloaded Things`, async () => {
 
 test(`User Event Count`, async () => {
 	const r = await c.userEventCount(username)
-	console.log(r.status, r.statusText)
-	console.log(r.content)
 	expect(r.ok).toBe(true)
 })
 
