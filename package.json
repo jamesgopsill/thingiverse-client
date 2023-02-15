@@ -10,10 +10,14 @@
 	"license": "MIT",
 	"private": false,
 	"repository": {
-		"type": "",
-		"url": ""
+		"type": "github",
+		"url": "https://github.com/jamesgopsill/thingiverse-client"
 	},
-	"homepage": "",
+	"homepage": "https://jamesgopsill.github.io/thingiverse-client",
+	"funding": {
+		"type": "individual",
+		"url": "https://github.com/sponsors/jamesgopsill"
+	},
 	"engines": {
 		"node": ">=19.0.0"
 	},

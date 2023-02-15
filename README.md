@@ -4,7 +4,7 @@ The client has been developed as part of a research programme investigating agen
 
 ## Using thingiverse-client
 
-To install the package, use the following code. I am aiming to put it onto npm soon.
+To install the package, use your preferred package manager. E.g.,
 
 ```
 pnpm install @jamesgopsill/thingiverse-client
@@ -27,11 +27,10 @@ if (r.ok && r.status == 200) {
 }
 ```
 
-
 **Javascript (CJS)**
 
 ```javascript
-const { ThingiverseClient } = require("@jamesgopsill/octoprint-client")
+const { ThingiverseClient } = require("@jamesgopsill/thingiverse-client")
 
 // Create a new client. (Only setup for app tokens at the moment)
 const client = new ThingiverseClient("APP_TOKEN")
@@ -45,7 +44,7 @@ if (r.ok && r.status == 200) {
 
 ## Client Docs
 
-The docs have been produced using [TypeDoc](https://typedoc.org/) and can be accessed [here](https://jamesgopsill.github.io/octoprint-client/). More details on the API can be found at [Thingiverse Developers](https://www.thingiverse.com/developers).
+The docs have been produced using [TypeDoc](https://typedoc.org/) and can be accessed [here](https://jamesgopsill.github.io/thingiverse-client/). More details on the API can be found at [Thingiverse Developers](https://www.thingiverse.com/developers).
 
 ## Contributing
 
